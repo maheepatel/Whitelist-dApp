@@ -34,7 +34,7 @@ export default function Home() {
     //Connect to metamask
     //since we store `web3modal` as a ref, we need to access the current value to get access to the underlying object
     const provider = await web3ModalRef.current.connect();
-    const web3Provider = new provider.web3Provider(provider);
+    const web3Provider = new providers.Web3Provider(provider);
 
     //If user is not connected to Goreli network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
